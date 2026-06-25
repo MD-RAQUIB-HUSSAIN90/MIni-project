@@ -41,14 +41,39 @@ function showUsers(arr) {
     const card = document.createElement("div");
     card.classList.add("card");
 
+    // Image
     const img = document.createElement("img");
-    img.src = user.pic;
+    img.src =user.pic
+    img.alt = "";
     img.classList.add("bg-img");
-  });
 
-  // Create blurred-layer div
-  const blurredLayer=document.createElement("div");
-  blurredLayer.classList.add("blurred-layer")
+    // Blurred layer
+    const blurredLayer = document.createElement("div");
+    blurredLayer.style.backgroundColor=user.pic
+    blurredLayer.classList.add("blurred-layer");
+
+    // Content
+    const content = document.createElement("div");
+    content.classList.add("content");
+
+    const heading = document.createElement("h3");
+    heading.textContent = user.name;
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent =user.bio;
+
+    // Append content elements
+    content.appendChild(heading);
+    content.appendChild(paragraph);
+
+    // Append all to card
+    card.appendChild(img);
+    card.appendChild(blurredLayer);
+    card.appendChild(content);
+
+    // Add card to body (or any container)
+    document.body.appendChild(card);
+  });
 }
 
 showUsers(users);
