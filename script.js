@@ -37,7 +37,18 @@ let users = [
 ];
 
 function showUsers(arr) {
-  async (params) => {};
+  arr.forEach((user) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const img = document.createElement("img");
+    img.src = user.pic;
+    img.classList.add("bg-img");
+  });
+
+  // Create blurred-layer div
+  const blurredLayer=document.createElement("div");
+  blurredLayer.classList.add("blurred-layer")
 }
 
 showUsers(users);
